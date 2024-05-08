@@ -173,7 +173,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "max(nacos_monitor{name='domCount'})",
+          "expr": "max(nacos_monitor{name='serviceCount'})",
           "format": "time_series",
           "intervalFactor": 1,
           "refId": "A"
