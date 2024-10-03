@@ -1,4 +1,14 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_PROMETHEUS",
+      "label": "Prometheus",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -48,10 +58,7 @@
       "type": "row"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -112,9 +119,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "count(nacos_monitor{name=\"configCount\",instance=~'$instance'})",
           "format": "time_series",
@@ -127,10 +132,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -191,9 +193,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "max(nacos_monitor{name='serviceCount',instance=~'$instance'})",
           "format": "time_series",
@@ -206,10 +206,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -270,9 +267,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "max(nacos_monitor{name='ipCount',instance=~'$instance'})",
           "format": "time_series",
@@ -285,9 +280,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "uid": "prometheus"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -348,9 +341,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "expr": "max(nacos_monitor{name='configCount', instance=~'$instance'})",
           "format": "time_series",
           "intervalFactor": 1,
@@ -361,10 +352,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -425,9 +413,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "sum(nacos_monitor{name='longPolling',instance=~'$instance'})",
           "format": "time_series",
@@ -440,10 +426,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -504,9 +487,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "sum(nacos_monitor{name='longConnection', instance=~'$instance'}) by (name)",
           "format": "time_series",
@@ -552,9 +533,7 @@
       "type": "text"
     },
     {
-      "datasource": {
-        "uid": "prometheus"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -622,9 +601,7 @@
       "repeatDirection": "h",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "expr": "max(system_cpu_usage{instance=~'$instance'}) * 100",
           "format": "time_series",
           "interval": "",
@@ -637,9 +614,7 @@
       "type": "gauge"
     },
     {
-      "datasource": {
-        "uid": "prometheus"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -705,9 +680,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "expr": "sum(jvm_memory_used_bytes{area=\"heap\", instance=~'$instance'})/sum(jvm_memory_max_bytes{area=\"heap\", instance=~'$instance'}) * 100",
           "format": "time_series",
           "intervalFactor": 1,
@@ -766,9 +739,7 @@
       "type": "alertlist"
     },
     {
-      "datasource": {
-        "uid": "prometheus"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -834,9 +805,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "expr": "max(jvm_threads_daemon_threads{instance=~'$instance'})",
           "format": "time_series",
           "intervalFactor": 1,
@@ -847,10 +816,7 @@
       "type": "gauge"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -918,9 +884,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "sum(increase(jvm_gc_pause_seconds_count{action=\"end of major GC\",instance=~'$instance'}[1m]))",
           "format": "time_series",
@@ -933,10 +897,7 @@
       "type": "gauge"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1002,9 +963,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "sum(rate(http_server_requests_seconds_count{instance=~'$instance'}[1m])) + sum(rate(grpc_server_requests_seconds_count{instance=~'$instance'}[1m]))",
           "format": "time_series",
@@ -1018,10 +977,7 @@
       "type": "gauge"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1087,9 +1043,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "(sum(rate(http_server_requests_seconds_sum{instance=~'$instance'}[1m]))/sum(rate(http_server_requests_seconds_count{instance=~'$instance'}[1m])) * 1000 + sum(rate(grpc_server_requests_seconds_sum{instance=~'$instance'}[1m]))/sum(rate(grpc_server_requests_seconds_count{instance=~'$instance'}[1m])) * 1000) / 2",
           "format": "time_series",
@@ -1129,10 +1083,7 @@
       "type": "row"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1210,9 +1161,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "max(nacos_monitor{name='serviceCount',instance=~'$instance'})",
           "format": "time_series",
@@ -1226,10 +1175,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1307,9 +1253,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "max(nacos_monitor{name='ipCount',instance=~'$instance'})",
           "format": "time_series",
@@ -1323,10 +1267,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1404,9 +1345,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "sum(nacos_monitor{name='subscriberCount',instance=~'$instance'})",
           "format": "time_series",
@@ -1420,10 +1359,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1501,9 +1437,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "max(nacos_monitor{name='configCount',instance=~'$instance'})",
           "format": "time_series",
@@ -1517,10 +1451,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1598,9 +1529,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "max(nacos_monitor{name='longPolling',instance=~'$instance'})",
           "format": "time_series",
@@ -1614,10 +1543,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1695,9 +1621,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "sum(nacos_config_subscriber{instance=~'$instance'}) by (instance)",
           "format": "time_series",
@@ -1711,10 +1635,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1792,9 +1713,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "sum(rate(http_server_requests_seconds_sum{uri=~'.*/cs/configs|.*/ns/instance.*', instance=~'$instance'}[1m])/rate(http_server_requests_seconds_count{uri=~'.*/cs/configs|.*/ns/instance.*', instance=~'$instance'}[1m])) by (method,uri) * 1000 > 0",
           "format": "time_series",
@@ -1803,9 +1722,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "expr": "sum(rate(http_server_requests_seconds_sum{instance=~'$instance'}[1m]))/sum(rate(http_server_requests_seconds_count{instance=~'$instance'}[1m])) * 1000",
           "format": "time_series",
           "hide": false,
@@ -1818,10 +1735,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1899,9 +1813,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "sum(rate(http_server_requests_seconds_sum{uri=~'.*/cs/configs|.*/ns/instance.*', instance=~'$instance'}[1m])) > 0",
           "format": "time_series",
@@ -1910,9 +1822,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "sum(rate(http_server_requests_seconds_sum{instance=~'$instance'}[1m]))",
           "format": "time_series",
@@ -1927,10 +1837,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2008,9 +1915,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "sum(nacos_monitor{module=\"naming\",name=\"pushPendingTaskCount\",instance=~'$instance'})",
           "format": "time_series",
@@ -2024,10 +1929,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2105,9 +2007,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "sum(rate(grpc_server_requests_seconds_sum{instance=~'$instance'}[1m])/rate(grpc_server_requests_seconds_count{ instance=~'$instance'}[1m])) by (requestClass) * 1000 > 0",
           "format": "time_series",
@@ -2116,9 +2016,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "sum(rate(grpc_server_requests_seconds_sum{instance=~'$instance'}[1m]))/sum(rate(grpc_server_requests_seconds_count{instance=~'$instance'}[1m])) * 1000",
           "format": "time_series",
@@ -2133,10 +2031,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2214,9 +2109,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "sum(rate(grpc_server_requests_seconds_sum{instance=~'$instance'}[1m])) by (requestClass) > 0",
           "format": "time_series",
@@ -2225,9 +2118,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "sum(rate(grpc_server_requests_seconds_sum{instance=~'$instance'}[1m]))",
           "format": "time_series",
@@ -2242,10 +2133,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2323,9 +2211,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "sum(nacos_monitor{module=\"config\",name=\"notifyClientTask\",instance=~'$instance'})",
           "format": "time_series",
@@ -2365,10 +2251,7 @@
       "type": "row"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2446,9 +2329,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "max(system_cpu_usage{instance=~'$instance'}) * 100",
           "format": "time_series",
@@ -2462,10 +2343,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2543,9 +2421,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "sum(jvm_memory_used_bytes{area=\"heap\"})/sum(jvm_memory_max_bytes{area=\"heap\"}) * 100",
           "format": "time_series",
@@ -2559,10 +2435,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2636,9 +2509,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "max(increase(jvm_gc_pause_seconds_count{instance=~'$instance'}[1m])) by (action)",
           "format": "time_series",
@@ -2652,10 +2523,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2729,9 +2597,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "sum(nacos_monitor{module=\"core\",name=\"longConnection\",instance=~'$instance'}) by (instance)",
           "format": "time_series",
@@ -2746,10 +2612,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2823,9 +2686,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "avg(grpc_server_executor{module=\"core\",type=\"grpcSdkServer\",instance=~'$instance',name=\"poolSize\"}) by (name)",
           "format": "time_series",
@@ -2835,9 +2696,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "exemplar": false,
           "expr": "avg(grpc_server_executor{module=\"core\",type=\"grpcSdkServer\",instance=~'$instance',name=\"maximumPoolSize\"}) by (name)",
@@ -2850,9 +2709,7 @@
           "refId": "B"
         },
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "avg(grpc_server_executor{module=\"core\",type=\"grpcSdkServer\",instance=~'$instance',name=\"activeCount\"}) by (name)",
           "format": "time_series",
@@ -2867,10 +2724,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "fdk5rd4242e4gd"
-      },
+      "datasource": "${DS_PROMETHEUS}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2944,9 +2798,7 @@
       "pluginVersion": "10.4.2",
       "targets": [
         {
-          "datasource": {
-            "uid": "prometheus"
-          },
+          "datasource": "${DS_PROMETHEUS}",
           "editorMode": "code",
           "expr": "avg(grpc_server_executor{module=\"core\",type=\"grpcSdkServer\",instance=~'$instance',name=\"inQueueTaskCount\"}) by (name)",
           "format": "time_series",
@@ -2972,9 +2824,7 @@
           "text": "All",
           "value": "$__all"
         },
-        "datasource": {
-          "uid": "prometheus"
-        },
+        "datasource": "${DS_PROMETHEUS}",
         "definition": "label_values(instance)",
         "hide": 0,
         "includeAll": true,
